@@ -30,6 +30,9 @@ Public Class Form1
         outFile.Write("|")
         outFile.Write(Fld5.Text)
         outFile.Write("|")
+        outFile.Write(WaternoosePictureBox1.ImageLocation)
+        outFile.WriteLine()
+        outFile.Close()
     End Sub
 End Class
 
