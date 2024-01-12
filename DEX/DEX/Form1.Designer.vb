@@ -106,18 +106,19 @@ Partial Class Form1
         'NewToolStripMenuItem1
         '
         Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
-        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(123, 26)
         Me.NewToolStripMenuItem1.Text = "New"
         '
         'SaveToolStripMenuItem2
         '
         Me.SaveToolStripMenuItem2.Name = "SaveToolStripMenuItem2"
-        Me.SaveToolStripMenuItem2.Size = New System.Drawing.Size(224, 26)
+        Me.SaveToolStripMenuItem2.Size = New System.Drawing.Size(123, 26)
         Me.SaveToolStripMenuItem2.Text = "Save"
         '
         'WaternoosePictureBox1
         '
         Me.WaternoosePictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.WaternoosePictureBox1.Image = Global.DEX.My.Resources.Resources.dex1
         Me.WaternoosePictureBox1.Location = New System.Drawing.Point(430, 66)
         Me.WaternoosePictureBox1.Name = "WaternoosePictureBox1"
         Me.WaternoosePictureBox1.Size = New System.Drawing.Size(141, 103)
@@ -255,6 +256,7 @@ Partial Class Form1
         'JamesPictureBox2
         '
         Me.JamesPictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.JamesPictureBox2.Image = Global.DEX.My.Resources.Resources.dex2
         Me.JamesPictureBox2.Location = New System.Drawing.Point(283, 66)
         Me.JamesPictureBox2.Name = "JamesPictureBox2"
         Me.JamesPictureBox2.Size = New System.Drawing.Size(141, 103)
@@ -266,6 +268,7 @@ Partial Class Form1
         'MikePictureBox3
         '
         Me.MikePictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.MikePictureBox3.Image = Global.DEX.My.Resources.Resources.dex3
         Me.MikePictureBox3.Location = New System.Drawing.Point(136, 66)
         Me.MikePictureBox3.Name = "MikePictureBox3"
         Me.MikePictureBox3.Size = New System.Drawing.Size(141, 103)
@@ -277,6 +280,7 @@ Partial Class Form1
         'YetiPictureBox4
         '
         Me.YetiPictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.YetiPictureBox4.Image = Global.DEX.My.Resources.Resources.dex4
         Me.YetiPictureBox4.Location = New System.Drawing.Point(0, 66)
         Me.YetiPictureBox4.Name = "YetiPictureBox4"
         Me.YetiPictureBox4.Size = New System.Drawing.Size(130, 103)
