@@ -1,10 +1,10 @@
 ﻿
 Imports System.IO
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
+'NOTE:This code does have some added items to it that you do not need for the class 
 Public Class Form1
     Dim Records(50) As String
-
+    'from this point (scroll down)
     Private Sub WaternooseButton1_Click(sender As Object, e As EventArgs) Handles WaternooseButton1.Click
         WaternoosePictureBox1.Visible = True
         JamesPictureBox2.Visible = False
@@ -52,7 +52,7 @@ Public Class Form1
         Fld4.Text = "All Data Deleted"
         Fld5.Text = "The Yeti is a monster who worked at ___=====++-__++-+, Inc. until he got __--__-__--_ to the Himalayas by Water___---__-_ for discovering letters regarding the latter's involvement with the ____+=++++=___  ___==++-__. Despite being ____----__-_-__, he likes living in the human world."
     End Sub
-
+    'To this point you do not need this code, it was just an adding a most recent search
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         WaternoosePictureBox1.Image = Nothing
         Fld1.Text = ""
