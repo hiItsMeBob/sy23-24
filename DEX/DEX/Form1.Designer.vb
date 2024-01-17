@@ -24,9 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MontersIncToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,6 +48,10 @@ Partial Class Form1
         Me.YetiPictureBox4 = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.WaternoosePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JamesPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,31 +71,12 @@ Partial Class Form1
         'MenuStrip2
         '
         Me.MenuStrip2.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripMenuItem, Me.MontersIncToolStripMenuItem})
+        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MontersIncToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
         Me.MenuStrip2.Size = New System.Drawing.Size(800, 28)
         Me.MenuStrip2.TabIndex = 1
         Me.MenuStrip2.Text = "MenuStrip2"
-        '
-        'SaveToolStripMenuItem
-        '
-        Me.SaveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.SaveToolStripMenuItem1})
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(46, 24)
-        Me.SaveToolStripMenuItem.Text = "File"
-        '
-        'NewToolStripMenuItem
-        '
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(123, 26)
-        Me.NewToolStripMenuItem.Text = "New"
-        '
-        'SaveToolStripMenuItem1
-        '
-        Me.SaveToolStripMenuItem1.Name = "SaveToolStripMenuItem1"
-        Me.SaveToolStripMenuItem1.Size = New System.Drawing.Size(123, 26)
-        Me.SaveToolStripMenuItem1.Text = "Save"
         '
         'MontersIncToolStripMenuItem
         '
@@ -106,13 +88,13 @@ Partial Class Form1
         'NewToolStripMenuItem1
         '
         Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
-        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(123, 26)
+        Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
         Me.NewToolStripMenuItem1.Text = "New"
         '
         'SaveToolStripMenuItem2
         '
         Me.SaveToolStripMenuItem2.Name = "SaveToolStripMenuItem2"
-        Me.SaveToolStripMenuItem2.Size = New System.Drawing.Size(123, 26)
+        Me.SaveToolStripMenuItem2.Size = New System.Drawing.Size(224, 26)
         Me.SaveToolStripMenuItem2.Text = "Save"
         '
         'WaternoosePictureBox1
@@ -302,11 +284,51 @@ Partial Class Form1
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Most recent "
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(459, 282)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "First"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(540, 282)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Next"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(621, 282)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Previ"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(702, 282)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "Last"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.YetiPictureBox4)
         Me.Controls.Add(Me.MikePictureBox3)
@@ -345,9 +367,6 @@ Partial Class Form1
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuStrip2 As MenuStrip
-    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents WaternoosePictureBox1 As PictureBox
     Friend WithEvents Fld1 As TextBox
     Friend WithEvents Fld2 As TextBox
@@ -372,4 +391,8 @@ Partial Class Form1
     Friend WithEvents SaveToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Label7 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

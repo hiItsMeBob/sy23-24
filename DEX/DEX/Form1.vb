@@ -35,10 +35,10 @@ Public Class Form1
         MikePictureBox3.Visible = True
         YetiPictureBox4.Visible = False
         Fld1.Text = "Mike Wazowski"
-        Fld2.Text = "Mike Wazowski"
+        Fld2.Text = "James P.Sullivan"
         Fld3.Text = "7"
         Fld4.Text = "Jokester"
-        Fld5.Text = "In Monsters, Inc., Mike and Sulley are at each other's throats sometimes; however, it is usually Mike who gets annoyed by Sulley first. He is funny, smart, and brave, but can sometimes fail to see the obvious in a situation. He's also a very caring and dedicated friend, never going through with abandoning Sulley, no matter what. In Monsters University, Mike was vaguely the same but, due to his youth, he had richer determination and planned to become a Scarer in MU's prestigious Scaring Program. As a child, he'd been overlooked for being smaller than everyone but was inspired by Scarer Frank McCay to become one himself. With hard work and studying, he was accepted into MU and confidently strove to succeed. Unfortunately, Mike's shame of not being scary came back to affect him following the games' conclusion, where, determined to prove everyone wrong, Mike stole a key into the door lab and entered the human world to scare a child, only to realize the hard way, that Sulley and Hardscarbble had been right when the children aren't scared of him at all. And now is just a joker"
+        Fld5.Text = "In Monsters, Inc., Mike and Sulley are at each other's throats sometimes; however, it is usually Mike who gets annoyed by Sulley first. He is funny, smart, and brave, but can sometimes fail to see the obvious in a situation. He's also a very caring and dedicated friend, never going through with abandoning Sulley, no matter what. In Monsters University, Mike was vaguely the same but, due to his youth, he had richer determination and planned to become a Scarer in MU's prestigious Scaring Program. As a child, he'd been overlooked for being smaller than everyone but was inspired by Scarer Frank McCay to become one himself. With hard work and studying, he was accepted into MU and confidently strove to succeed. Unfortunately, Mike's shame of not being scary came back to affect him following the games' conclusion, where, determined to prove everyone wrong, Mike stole a key into the door lab and entered the human world to scare a child, only to realize the hard way, that Sulley and Hardscarbble had been right when the children aren't scared of him at all. but became joker for Monsters Inc"
     End Sub
     Private Sub YetiButton4_Click(sender As Object, e As EventArgs) Handles YetiButton4.Click
         JamesPictureBox2.Visible = False
@@ -52,7 +52,7 @@ Public Class Form1
         Fld4.Text = "All Data Deleted"
         Fld5.Text = "The Yeti is a monster who worked at ___=====++-__++-+, Inc. until he got __--__-__--_ to the Himalayas by Water___---__-_ for discovering letters regarding the latter's involvement with the ____+=++++=___  ___==++-__. Despite being ____----__-_-__, he likes living in the human world."
     End Sub
-    'To this point you do not need this code, it was just an adding a most recent search
+    'To this point you do not need this code, it was just an adding a most recent search. You will need to add 4 buttons to use 
     Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         WaternoosePictureBox1.Image = Nothing
         Fld1.Text = ""
@@ -84,13 +84,27 @@ Public Class Form1
         outFile.WriteLine()
         outFile.Close()
     End Sub
-
+    '(below this point)This adds a save options and you can save up to 50 items
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If IO.File.Exists("Data.txt") Then
             Dim infile As New StreamReader("Data.txt")
             Records(0) = infile.ReadLine
-            Records(1) = infile.ReadLine
             infile.Close()
+            showrecord(0)
+        End If
+    End Sub
+    Sub showrecord(index As Integer)
+        If Records(index) <> Nothing Then
+            Dim fields() As String
+            fields = Records(index).Split("|")
+            Fld1.Text = fields(0)
+            Fld2.Text = fields(1)
+            Fld3.Text = fields(2)
+            Fld4.Text = fields(3)
+            Fld5.Text = fields(4)
+            If File.Exists(fields(5)) Then
+                WaternoosePictureBox1.Load(fields(5))
+            End If
         End If
     End Sub
 End Class
