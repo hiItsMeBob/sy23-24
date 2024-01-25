@@ -1,10 +1,10 @@
-﻿
-Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-'NOTE:This code does have some added items to it that you do not need for the class 
+﻿Imports System.IO
+Imports System.Web
+
 Public Class Form1
-    Dim Records(50) As String
-    'from this point (scroll down)
+    Dim records(50) As String
+    Dim count As Integer
+    Dim current As Integer
     Private Sub WaternooseButton1_Click(sender As Object, e As EventArgs) Handles WaternooseButton1.Click
         WaternoosePictureBox1.Visible = True
         JamesPictureBox2.Visible = False
@@ -45,6 +45,10 @@ Public Class Form1
         WaternoosePictureBox1.Visible = False
         MikePictureBox3.Visible = False
         YetiPictureBox4.Visible = True
+
+        'Timer1.Enabled = True
+        'eggTextBox.Visible = True
+
         MsgBox("Most Data Was Lost, Would You Like To Continue?")
         Fld1.Text = "All Data Deleted"
         Fld2.Text = "All Data Deleted"
@@ -52,62 +56,109 @@ Public Class Form1
         Fld4.Text = "All Data Deleted"
         Fld5.Text = "The Yeti is a monster who worked at ___=====++-__++-+, Inc. until he got __--__-__--_ to the Himalayas by Water___---__-_ for discovering letters regarding the latter's involvement with the ____+=++++=___  ___==++-__. Despite being ____----__-_-__, he likes living in the human world."
     End Sub
+
     'To this point you do not need this code, it was just an adding a most recent search. You will need to add 4 buttons to use 
-    Private Sub NewToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
-        WaternoosePictureBox1.Image = Nothing
+
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem1.Click
         Fld1.Text = ""
         Fld2.Text = ""
         Fld3.Text = ""
         Fld4.Text = ""
         Fld5.Text = ""
+        WaternoosePictureBox1.Image = Nothing
+        current = count
+        count = count + 1
     End Sub
 
-    Private Sub WaternoosePictureBox1_Click(sender As Object, e As EventArgs) Handles WaternoosePictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles WaternoosePictureBox1.Click
         OpenFileDialog1.ShowDialog()
     End Sub
+
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         WaternoosePictureBox1.Load(OpenFileDialog1.FileName)
     End Sub
-    Private Sub SaveToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem2.Click
-        Dim outFile As New IO.StreamWriter("Data.txt")
-        outFile.Write(Fld1.Text)
-        outFile.Write("|")
-        outFile.Write(Fld2.Text)
-        outFile.Write("|")
-        outFile.Write(Fld3.Text)
-        outFile.Write("|")
-        outFile.Write(Fld4.Text)
-        outFile.Write("|")
-        outFile.Write(Fld5.Text)
-        outFile.Write("|")
-        outFile.Write(WaternoosePictureBox1.ImageLocation)
-        outFile.WriteLine()
+
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem2.Click
+        SaveToFile()
+    End Sub
+    Sub SaveToFile()
+        Dim r As String
+        r += Fld1.Text
+        r += "|"
+        r += Fld2.Text
+        r += "|"
+        r += Fld3.Text
+        r += "|"
+        r += Fld4.Text
+        r += "|"
+        r += Fld5.Text
+        r += "|"
+        r += WaternoosePictureBox1.ImageLocation
+        If count = 0 Then count = 1
+        records(current) = r
+
+        Dim outFile As New StreamWriter("data.txt")
+        For index = 0 To count - 1
+            outFile.WriteLine(records(index))
+        Next
         outFile.Close()
     End Sub
-    '(below this point)This adds a save options and you can save up to 50 items
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If IO.File.Exists("Data.txt") Then
-            Dim infile As New StreamReader("Data.txt")
-            Records(0) = infile.ReadLine
-            infile.Close()
-            showrecord(0)
+        If IO.File.Exists("data.txt") Then
+            Dim inFile As New StreamReader("data.txt")
+            While (Not inFile.EndOfStream)
+                records(count) = inFile.ReadLine
+                count = count + 1
+            End While
+            inFile.Close()
+            ShowRecord(0)
         End If
     End Sub
-    Sub showrecord(index As Integer)
-        If Records(index) <> Nothing Then
-            Dim fields() As String
-            fields = Records(index).Split("|")
-            Fld1.Text = fields(0)
-            Fld2.Text = fields(1)
-            Fld3.Text = fields(2)
-            Fld4.Text = fields(3)
-            Fld5.Text = fields(4)
-            If File.Exists(fields(5)) Then
-                WaternoosePictureBox1.Load(fields(5))
+    Public Sub ShowRecord(index As Integer)
+        WaternoosePictureBox1.Image = Nothing
+        If records(index) <> Nothing Then
+            Dim Fields() As String
+            Fields = records(index).Split("|")
+            Fld1.Text = Fields(0)
+            Fld2.Text = Fields(1)
+            Fld3.Text = Fields(2)
+            Fld4.Text = Fields(3)
+            Fld5.Text = Fields(4)
+            If File.Exists(Fields(5)) Then
+                WaternoosePictureBox1.Load(Fields(5))
             End If
         End If
     End Sub
+
+    Private Sub FirstButton_Click(sender As Object, e As EventArgs) Handles FirstButton.Click
+        SaveToFile()
+        current = 0
+        ShowRecord(current)
+    End Sub
+
+    Private Sub PrevButton_Click(sender As Object, e As EventArgs) Handles PrevButton.Click
+        SaveToFile()
+        If current > 0 Then
+            current = current - 1
+        End If
+        ShowRecord(current)
+    End Sub
+
+    Private Sub NextButton_Click(sender As Object, e As EventArgs) Handles NextButton.Click
+        SaveToFile()
+        If current < count - 1 Then
+            current = current + 1
+        End If
+        ShowRecord(current)
+    End Sub
+
+    Private Sub LastButton_Click(sender As Object, e As EventArgs) Handles LastButton.Click
+        SaveToFile()
+        If count > 0 Then
+            current = count - 1
+            ShowRecord(current)
+        End If
+    End Sub
 End Class
-
-
-

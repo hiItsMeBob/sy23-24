@@ -33,6 +33,7 @@ Partial Class Form1
         'NumericUpDown1
         '
         Me.NumericUpDown1.Location = New System.Drawing.Point(113, 68)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 22)
         Me.NumericUpDown1.TabIndex = 0

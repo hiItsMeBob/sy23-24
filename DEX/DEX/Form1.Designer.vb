@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
         Me.MontersIncToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,10 +49,12 @@ Partial Class Form1
         Me.YetiPictureBox4 = New System.Windows.Forms.PictureBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.FirstButton = New System.Windows.Forms.Button()
+        Me.NextButton = New System.Windows.Forms.Button()
+        Me.PrevButton = New System.Windows.Forms.Button()
+        Me.LastButton = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.eggTextBox = New System.Windows.Forms.TextBox()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.WaternoosePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JamesPictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -284,51 +287,65 @@ Partial Class Form1
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "Most recent "
         '
-        'Button1
+        'FirstButton
         '
-        Me.Button1.Location = New System.Drawing.Point(459, 282)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "First"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.FirstButton.Location = New System.Drawing.Point(459, 282)
+        Me.FirstButton.Name = "FirstButton"
+        Me.FirstButton.Size = New System.Drawing.Size(75, 23)
+        Me.FirstButton.TabIndex = 22
+        Me.FirstButton.Text = "First"
+        Me.FirstButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'NextButton
         '
-        Me.Button2.Location = New System.Drawing.Point(540, 282)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 23
-        Me.Button2.Text = "Next"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.NextButton.Location = New System.Drawing.Point(621, 282)
+        Me.NextButton.Name = "NextButton"
+        Me.NextButton.Size = New System.Drawing.Size(75, 23)
+        Me.NextButton.TabIndex = 23
+        Me.NextButton.Text = "Next"
+        Me.NextButton.UseVisualStyleBackColor = True
         '
-        'Button3
+        'PrevButton
         '
-        Me.Button3.Location = New System.Drawing.Point(621, 282)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Previ"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.PrevButton.Location = New System.Drawing.Point(540, 282)
+        Me.PrevButton.Name = "PrevButton"
+        Me.PrevButton.Size = New System.Drawing.Size(75, 23)
+        Me.PrevButton.TabIndex = 24
+        Me.PrevButton.Text = "Prev"
+        Me.PrevButton.UseVisualStyleBackColor = True
         '
-        'Button4
+        'LastButton
         '
-        Me.Button4.Location = New System.Drawing.Point(702, 282)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "Last"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.LastButton.Location = New System.Drawing.Point(702, 282)
+        Me.LastButton.Name = "LastButton"
+        Me.LastButton.Size = New System.Drawing.Size(75, 23)
+        Me.LastButton.TabIndex = 25
+        Me.LastButton.Text = "Last"
+        Me.LastButton.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
+        'eggTextBox
+        '
+        Me.eggTextBox.BackColor = System.Drawing.Color.Red
+        Me.eggTextBox.Location = New System.Drawing.Point(30, 223)
+        Me.eggTextBox.Name = "eggTextBox"
+        Me.eggTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.eggTextBox.TabIndex = 26
+        Me.eggTextBox.Visible = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.eggTextBox)
+        Me.Controls.Add(Me.LastButton)
+        Me.Controls.Add(Me.PrevButton)
+        Me.Controls.Add(Me.NextButton)
+        Me.Controls.Add(Me.FirstButton)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.YetiPictureBox4)
         Me.Controls.Add(Me.MikePictureBox3)
@@ -391,8 +408,10 @@ Partial Class Form1
     Friend WithEvents SaveToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents FirstButton As Button
+    Friend WithEvents NextButton As Button
+    Friend WithEvents PrevButton As Button
+    Friend WithEvents LastButton As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents eggTextBox As TextBox
 End Class
