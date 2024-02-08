@@ -20,4 +20,9 @@
         CS.InsetDollor()
         Label1.Text = CS.Total
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        CS.Insetcent()
+        Label1.Text = CS.Total
+    End Sub
 End Class

@@ -3,9 +3,10 @@
     Public Property Quortors As Integer
     Public Property Dimes As Integer
     Public Property Dollars As Integer
+    Public Property cent As Integer
     Public ReadOnly Property Total As Decimal
         Get
-            Return Dollars + Quortors * 0.25 + Dimes * 0.1 + Nickles * 0.5
+            Return Dollars + Quortors * 0.25 + Dimes * 0.1 + Nickles * 0.5 + cent * 0.1
         End Get
     End Property
     Public Sub InsetNickles()
@@ -19,5 +20,8 @@
     End Sub
     Public Sub InsetDollor()
         Dollars = Dollars + 1
+    End Sub
+    Public Sub Insetcent()
+        cent = cent + 1
     End Sub
 End Class
