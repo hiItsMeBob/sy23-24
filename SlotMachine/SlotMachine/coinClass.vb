@@ -1,7 +1,9 @@
 ﻿Public Class CoinSlot
+
     Public Event coinReternEvent(d As Integer, q As Integer, dm As Integer, n As Integer, c As Integer)
     Public Property Nickles As Integer
     Public Property Quortors As Integer
+
     Public Property Dimes As Integer
     Public Property Dollars As Integer
     Public Property cent As Integer
@@ -41,3 +43,6 @@
     End Sub
 
 End Class
+
+
+
