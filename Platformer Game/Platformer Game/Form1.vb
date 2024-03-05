@@ -12,10 +12,33 @@ Public Class Form1
                 TmrUp.Start()
                 isJumping = True
         End Select
+
     End Sub
 
     Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick
         Picplayer.Left += moveSpeed
+    End Sub
+    Private Sub RightAngryTmr_Tick(sender As Object, e As EventArgs) Handles RightAngryTmr.Tick
+        PictureBox2.Left += moveSpeed
+        PictureBox8.Left += moveSpeed
+        PictureBox5.Left += moveSpeed
+        PictureBox10.Left += moveSpeed
+        PictureBox1.Left += moveSpeed
+        PictureBox7.Left += moveSpeed
+        PictureBox4.Left += moveSpeed
+        PictureBox9.Left += moveSpeed
+        PicSpikeWall.Left += moveSpeed
+    End Sub
+    Private Sub LeftAngryTmr_Tick(sender As Object, e As EventArgs) Handles LeftAngryTmr.Tick
+        PictureBox2.Left += moveSpeed
+        PictureBox8.Left += moveSpeed
+        PictureBox5.Left += moveSpeed
+        PictureBox10.Left += moveSpeed
+        PictureBox1.Left += moveSpeed
+        PictureBox7.Left += moveSpeed
+        PictureBox4.Left += moveSpeed
+        PictureBox9.Left += moveSpeed
+        PicSpikeWall.Left += moveSpeed
     End Sub
 
     Private Sub frm2Dplatformer_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
@@ -40,6 +63,7 @@ Public Class Form1
 
     Private Sub frm2Dplatformer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tmrGameLogic.Start()
+        TextBox1.Select()
     End Sub
 
     Private Sub tmrGameLogic_Tick(sender As Object, e As EventArgs) Handles tmrGameLogic.Tick
@@ -58,6 +82,7 @@ Public Class Form1
         End If
         If Picplayer.Bounds.IntersectsWith(PictureBox3.Bounds) Then
             TmrGrav.Stop()
+            tmrRight.Stop()
         End If
         If Picplayer.Bounds.IntersectsWith(PictureBox4.Bounds) Then
             TmrGrav.Stop()
@@ -71,9 +96,13 @@ Public Class Form1
         If Picplayer.Bounds.IntersectsWith(PicSpikeWall.Bounds) Then
             Me.Close()
         End If
+
         If Picplayer.Bounds.IntersectsWith(PicCoin.Bounds) Then
-            CoinLabel.Text = (+1)
+            CoinLabel.Text = ("1-1w")
             PicCoin.Visible = False
+            LeftAngryTmr.Enabled = True
+            up.Enabled = True
+
         End If
         If Picplayer.Bounds.IntersectsWith(EndPic.Bounds) Then
             Me.BackColor = Color.Green
@@ -83,6 +112,7 @@ Public Class Form1
             PictureBox3.BackColor = Color.Green
             PictureBox4.BackColor = Color.Green
             PictureBox5.BackColor = Color.Green
+            EndPic.Visible = False
             TextBox1.Visible = True
 
         End If
@@ -104,5 +134,8 @@ Public Class Form1
         Picplayer.Top += moveSpeed
     End Sub
 
-  
+    Private Sub up_Tick(sender As Object, e As EventArgs) Handles up.Tick
+        PictureBox3.Top += moveSpeed
+        PictureBox6.Top += moveSpeed
+    End Sub
 End Class

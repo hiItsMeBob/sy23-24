@@ -29,6 +29,17 @@ Partial Class Form1
         Me.tmrGameLogic = New System.Windows.Forms.Timer(Me.components)
         Me.TmrGrav = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.CoinLabel = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.RightAngryTmr = New System.Windows.Forms.Timer(Me.components)
+        Me.LeftAngryTmr = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PicSpikeWall = New System.Windows.Forms.PictureBox()
         Me.PicCoin = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -39,10 +50,13 @@ Partial Class Form1
         Me.Picplayer = New System.Windows.Forms.PictureBox()
         Me.Picair = New System.Windows.Forms.PictureBox()
         Me.PicGround = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.CoinLabel = New System.Windows.Forms.Label()
-        Me.PicSpikeWall = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.up = New System.Windows.Forms.Timer(Me.components)
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCoin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,7 +67,6 @@ Partial Class Form1
         CType(Me.Picplayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Picair, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicGround, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrRight
@@ -83,6 +96,99 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(51, 16)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "COINS:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(69, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 16)
+        Me.Label2.TabIndex = 12
+        '
+        'CoinLabel
+        '
+        Me.CoinLabel.AutoSize = True
+        Me.CoinLabel.Location = New System.Drawing.Point(75, 9)
+        Me.CoinLabel.Name = "CoinLabel"
+        Me.CoinLabel.Size = New System.Drawing.Size(25, 16)
+        Me.CoinLabel.TabIndex = 13
+        Me.CoinLabel.Text = "0-1"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.Yellow
+        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(98, 110)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(179, 108)
+        Me.TextBox1.TabIndex = 15
+        Me.TextBox1.Text = "YOU WINN!!!!!"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox1.Visible = False
+        '
+        'RightAngryTmr
+        '
+        Me.RightAngryTmr.Interval = 60
+        '
+        'LeftAngryTmr
+        '
+        Me.LeftAngryTmr.Interval = 60
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BackColor = System.Drawing.Color.Lime
+        Me.PictureBox10.Location = New System.Drawing.Point(827, 83)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(173, 10)
+        Me.PictureBox10.TabIndex = 20
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.Lime
+        Me.PictureBox9.Location = New System.Drawing.Point(1048, 196)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(173, 10)
+        Me.PictureBox9.TabIndex = 19
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.Lime
+        Me.PictureBox8.Location = New System.Drawing.Point(595, 196)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(173, 10)
+        Me.PictureBox8.TabIndex = 18
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Lime
+        Me.PictureBox7.Location = New System.Drawing.Point(827, 305)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(178, 10)
+        Me.PictureBox7.TabIndex = 17
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Lime
+        Me.PictureBox6.Location = New System.Drawing.Point(1260, 128)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(75, 10)
+        Me.PictureBox6.TabIndex = 16
+        Me.PictureBox6.TabStop = False
+        '
+        'PicSpikeWall
+        '
+        Me.PicSpikeWall.BackColor = System.Drawing.Color.Red
+        Me.PicSpikeWall.Location = New System.Drawing.Point(1341, 12)
+        Me.PicSpikeWall.Name = "PicSpikeWall"
+        Me.PicSpikeWall.Size = New System.Drawing.Size(112, 303)
+        Me.PicSpikeWall.TabIndex = 14
+        Me.PicSpikeWall.TabStop = False
         '
         'PicCoin
         '
@@ -125,7 +231,7 @@ Partial Class Form1
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Yellow
-        Me.PictureBox3.Location = New System.Drawing.Point(1244, 128)
+        Me.PictureBox3.Location = New System.Drawing.Point(1260, 128)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(75, 325)
         Me.PictureBox3.TabIndex = 5
@@ -176,51 +282,19 @@ Partial Class Form1
         Me.PicGround.TabIndex = 2
         Me.PicGround.TabStop = False
         '
-        'Label2
+        'up
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(69, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 16)
-        Me.Label2.TabIndex = 12
-        '
-        'CoinLabel
-        '
-        Me.CoinLabel.AutoSize = True
-        Me.CoinLabel.Location = New System.Drawing.Point(75, 9)
-        Me.CoinLabel.Name = "CoinLabel"
-        Me.CoinLabel.Size = New System.Drawing.Size(14, 16)
-        Me.CoinLabel.TabIndex = 13
-        Me.CoinLabel.Text = "0"
-        '
-        'PicSpikeWall
-        '
-        Me.PicSpikeWall.BackColor = System.Drawing.Color.Red
-        Me.PicSpikeWall.Location = New System.Drawing.Point(1413, 12)
-        Me.PicSpikeWall.Name = "PicSpikeWall"
-        Me.PicSpikeWall.Size = New System.Drawing.Size(40, 303)
-        Me.PicSpikeWall.TabIndex = 14
-        Me.PicSpikeWall.TabStop = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.Yellow
-        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(98, 110)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(179, 108)
-        Me.TextBox1.TabIndex = 15
-        Me.TextBox1.Text = "YOU WINN!!!!!"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TextBox1.Visible = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1453, 450)
+        Me.Controls.Add(Me.PictureBox10)
+        Me.Controls.Add(Me.PictureBox9)
+        Me.Controls.Add(Me.PictureBox8)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PicSpikeWall)
         Me.Controls.Add(Me.CoinLabel)
@@ -237,7 +311,13 @@ Partial Class Form1
         Me.Controls.Add(Me.Picair)
         Me.Controls.Add(Me.PicGround)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "a"
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCoin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -248,7 +328,6 @@ Partial Class Form1
         CType(Me.Picplayer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Picair, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicGround, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -274,4 +353,12 @@ Partial Class Form1
     Friend WithEvents CoinLabel As Label
     Friend WithEvents PicSpikeWall As PictureBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents RightAngryTmr As Timer
+    Friend WithEvents LeftAngryTmr As Timer
+    Friend WithEvents up As Timer
 End Class
