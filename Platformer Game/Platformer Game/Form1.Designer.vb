@@ -38,35 +38,49 @@ Partial Class Form1
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.cloud = New System.Windows.Forms.PictureBox()
         Me.PicSpikeWall = New System.Windows.Forms.PictureBox()
         Me.PicCoin = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.EndPic = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Picplayer = New System.Windows.Forms.PictureBox()
         Me.Picair = New System.Windows.Forms.PictureBox()
         Me.PicGround = New System.Windows.Forms.PictureBox()
         Me.up = New System.Windows.Forms.Timer(Me.components)
+        Me.ENDTMR = New System.Windows.Forms.Timer(Me.components)
+        Me.cloud2 = New System.Windows.Forms.PictureBox()
+        Me.cloud1 = New System.Windows.Forms.PictureBox()
+        Me.cloud3 = New System.Windows.Forms.PictureBox()
+        Me.Angrypic = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.wallpic = New System.Windows.Forms.PictureBox()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Wallpic2 = New System.Windows.Forms.PictureBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cloud, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCoin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EndPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Picplayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Picair, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicGround, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cloud2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cloud1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cloud3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Angrypic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wallpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Wallpic2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrRight
@@ -84,6 +98,7 @@ Partial Class Form1
         '
         'tmrGameLogic
         '
+        Me.tmrGameLogic.Interval = 50
         '
         'TmrGrav
         '
@@ -117,12 +132,12 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.Yellow
-        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(98, 110)
+        Me.TextBox1.Font = New System.Drawing.Font("MS Reference Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(15, 37)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(179, 108)
+        Me.TextBox1.Size = New System.Drawing.Size(433, 204)
         Me.TextBox1.TabIndex = 15
         Me.TextBox1.Text = "YOU WINN!!!!!"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -166,27 +181,27 @@ Partial Class Form1
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.Lime
-        Me.PictureBox7.Location = New System.Drawing.Point(827, 305)
+        Me.PictureBox7.Location = New System.Drawing.Point(827, 311)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(178, 10)
+        Me.PictureBox7.Size = New System.Drawing.Size(173, 10)
         Me.PictureBox7.TabIndex = 17
         Me.PictureBox7.TabStop = False
         '
-        'PictureBox6
+        'cloud
         '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Lime
-        Me.PictureBox6.Location = New System.Drawing.Point(1260, 128)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(75, 10)
-        Me.PictureBox6.TabIndex = 16
-        Me.PictureBox6.TabStop = False
+        Me.cloud.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cloud.Location = New System.Drawing.Point(100, 65)
+        Me.cloud.Name = "cloud"
+        Me.cloud.Size = New System.Drawing.Size(191, 28)
+        Me.cloud.TabIndex = 16
+        Me.cloud.TabStop = False
         '
         'PicSpikeWall
         '
         Me.PicSpikeWall.BackColor = System.Drawing.Color.Red
         Me.PicSpikeWall.Location = New System.Drawing.Point(1341, 12)
         Me.PicSpikeWall.Name = "PicSpikeWall"
-        Me.PicSpikeWall.Size = New System.Drawing.Size(112, 303)
+        Me.PicSpikeWall.Size = New System.Drawing.Size(112, 441)
         Me.PicSpikeWall.TabIndex = 14
         Me.PicSpikeWall.TabStop = False
         '
@@ -228,15 +243,6 @@ Partial Class Form1
         Me.EndPic.TabIndex = 6
         Me.EndPic.TabStop = False
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Yellow
-        Me.PictureBox3.Location = New System.Drawing.Point(1260, 128)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(75, 325)
-        Me.PictureBox3.TabIndex = 5
-        Me.PictureBox3.TabStop = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Yellow
@@ -251,14 +257,14 @@ Partial Class Form1
         Me.PictureBox1.BackColor = System.Drawing.Color.Yellow
         Me.PictureBox1.Location = New System.Drawing.Point(827, 311)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(178, 33)
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 33)
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'Picplayer
         '
         Me.Picplayer.BackColor = System.Drawing.Color.Red
-        Me.Picplayer.Location = New System.Drawing.Point(15, 336)
+        Me.Picplayer.Location = New System.Drawing.Point(123, 336)
         Me.Picplayer.Name = "Picplayer"
         Me.Picplayer.Size = New System.Drawing.Size(48, 43)
         Me.Picplayer.TabIndex = 0
@@ -285,16 +291,103 @@ Partial Class Form1
         'up
         '
         '
+        'ENDTMR
+        '
+        Me.ENDTMR.Interval = 5000
+        '
+        'cloud2
+        '
+        Me.cloud2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cloud2.Location = New System.Drawing.Point(511, 140)
+        Me.cloud2.Name = "cloud2"
+        Me.cloud2.Size = New System.Drawing.Size(191, 28)
+        Me.cloud2.TabIndex = 21
+        Me.cloud2.TabStop = False
+        '
+        'cloud1
+        '
+        Me.cloud1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cloud1.Location = New System.Drawing.Point(632, 27)
+        Me.cloud1.Name = "cloud1"
+        Me.cloud1.Size = New System.Drawing.Size(191, 28)
+        Me.cloud1.TabIndex = 22
+        Me.cloud1.TabStop = False
+        '
+        'cloud3
+        '
+        Me.cloud3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cloud3.Location = New System.Drawing.Point(43, 187)
+        Me.cloud3.Name = "cloud3"
+        Me.cloud3.Size = New System.Drawing.Size(191, 28)
+        Me.cloud3.TabIndex = 23
+        Me.cloud3.TabStop = False
+        '
+        'Angrypic
+        '
+        Me.Angrypic.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Angrypic.Location = New System.Drawing.Point(1183, 388)
+        Me.Angrypic.Name = "Angrypic"
+        Me.Angrypic.Size = New System.Drawing.Size(100, 50)
+        Me.Angrypic.TabIndex = 24
+        Me.Angrypic.TabStop = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
+        'wallpic
+        '
+        Me.wallpic.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.wallpic.Location = New System.Drawing.Point(0, 257)
+        Me.wallpic.Name = "wallpic"
+        Me.wallpic.Size = New System.Drawing.Size(16, 196)
+        Me.wallpic.TabIndex = 25
+        Me.wallpic.TabStop = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1
+        '
+        'Wallpic2
+        '
+        Me.Wallpic2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Wallpic2.Location = New System.Drawing.Point(1430, 257)
+        Me.Wallpic2.Name = "Wallpic2"
+        Me.Wallpic2.Size = New System.Drawing.Size(23, 196)
+        Me.Wallpic2.TabIndex = 26
+        Me.Wallpic2.TabStop = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.Red
+        Me.TextBox2.Font = New System.Drawing.Font("MS Reference Sans Serif", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(15, 37)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(433, 204)
+        Me.TextBox2.TabIndex = 27
+        Me.TextBox2.Text = "YOU LOSE :("
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox2.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1453, 450)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Wallpic2)
+        Me.Controls.Add(Me.wallpic)
+        Me.Controls.Add(Me.Angrypic)
+        Me.Controls.Add(Me.cloud3)
+        Me.Controls.Add(Me.cloud1)
+        Me.Controls.Add(Me.cloud2)
         Me.Controls.Add(Me.PictureBox10)
         Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.PictureBox7)
-        Me.Controls.Add(Me.PictureBox6)
+        Me.Controls.Add(Me.cloud)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PicSpikeWall)
         Me.Controls.Add(Me.CoinLabel)
@@ -304,7 +397,6 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.EndPic)
-        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Picplayer)
@@ -316,18 +408,23 @@ Partial Class Form1
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cloud, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicSpikeWall, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCoin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EndPic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Picplayer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Picair, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicGround, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cloud2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cloud1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cloud3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Angrypic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wallpic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Wallpic2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -343,7 +440,6 @@ Partial Class Form1
     Friend WithEvents TmrGrav As Timer
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents EndPic As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
@@ -353,7 +449,7 @@ Partial Class Form1
     Friend WithEvents CoinLabel As Label
     Friend WithEvents PicSpikeWall As PictureBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents cloud As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
@@ -361,4 +457,14 @@ Partial Class Form1
     Friend WithEvents RightAngryTmr As Timer
     Friend WithEvents LeftAngryTmr As Timer
     Friend WithEvents up As Timer
+    Friend WithEvents ENDTMR As Timer
+    Friend WithEvents cloud2 As PictureBox
+    Friend WithEvents cloud1 As PictureBox
+    Friend WithEvents cloud3 As PictureBox
+    Friend WithEvents Angrypic As PictureBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents wallpic As PictureBox
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Wallpic2 As PictureBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

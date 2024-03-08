@@ -28,14 +28,13 @@ Partial Class Mover
         '
         'Timer1
         '
+        Me.Timer1.Interval = 60
         '
         'Mover
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Name = "Mover"
-        Me.Size = New System.Drawing.Size(217, 193)
         Me.ResumeLayout(False)
 
     End Sub

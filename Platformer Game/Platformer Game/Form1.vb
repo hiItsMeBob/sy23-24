@@ -13,6 +13,7 @@ Public Class Form1
                 isJumping = True
         End Select
 
+
     End Sub
 
     Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick
@@ -64,6 +65,8 @@ Public Class Form1
     Private Sub frm2Dplatformer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tmrGameLogic.Start()
         TextBox1.Select()
+        Timer1.Start()
+
     End Sub
 
     Private Sub tmrGameLogic_Tick(sender As Object, e As EventArgs) Handles tmrGameLogic.Tick
@@ -80,18 +83,12 @@ Public Class Form1
         If Picplayer.Bounds.IntersectsWith(PictureBox2.Bounds) Then
             TmrGrav.Stop()
         End If
-        If Picplayer.Bounds.IntersectsWith(PictureBox3.Bounds) Then
-            TmrGrav.Stop()
-            tmrRight.Stop()
-        End If
+
         If Picplayer.Bounds.IntersectsWith(PictureBox4.Bounds) Then
             TmrGrav.Stop()
         End If
         If Picplayer.Bounds.IntersectsWith(PictureBox5.Bounds) Then
             TmrGrav.Stop()
-        End If
-        If Picplayer.Bounds.IntersectsWith(TextBox1.Bounds) Then
-            Me.Close()
         End If
         If Picplayer.Bounds.IntersectsWith(PicSpikeWall.Bounds) Then
             Me.Close()
@@ -109,13 +106,44 @@ Public Class Form1
             Picair.BackColor = Color.Green
             PictureBox1.BackColor = Color.Green
             PictureBox2.BackColor = Color.Green
-            PictureBox3.BackColor = Color.Green
             PictureBox4.BackColor = Color.Green
             PictureBox5.BackColor = Color.Green
+            wallpic.BackColor = Color.Green
+            Wallpic2.BackColor = Color.Green
             EndPic.Visible = False
             TextBox1.Visible = True
+            ENDTMR.Start()
+            Timer1.Stop()
+            Timer2.Stop()
 
         End If
+        If Picplayer.Bounds.IntersectsWith(Angrypic.Bounds) Then
+            Me.BackColor = Color.Red
+            Picair.BackColor = Color.Red
+            PictureBox1.BackColor = Color.Red
+            PictureBox2.BackColor = Color.Red
+            PictureBox4.BackColor = Color.Red
+            PictureBox5.BackColor = Color.Red
+            PictureBox10.BackColor = Color.Red
+            PictureBox5.BackColor = Color.Red
+            PictureBox7.BackColor = Color.Red
+            PictureBox9.BackColor = Color.Red
+            PictureBox8.BackColor = Color.Red
+            PicGround.BackColor = Color.Red
+            cloud.BackColor = Color.Red
+            cloud1.BackColor = Color.Red
+            cloud2.BackColor = Color.Red
+            cloud3.BackColor = Color.Red
+            wallpic.BackColor = Color.Red
+            Wallpic2.BackColor = Color.Red
+            PicCoin.Visible = False
+            EndPic.Visible = False
+            TextBox2.Visible = True
+            Timer1.Stop()
+            Timer2.Stop()
+            ENDTMR.Start()
+        End If
+
 
         For Each b As Control In Me.Controls
             If TypeOf b Is PictureBox Then
@@ -126,6 +154,17 @@ Public Class Form1
                 End If
             End If
 
+            If Angrypic.Bounds.IntersectsWith(wallpic.Bounds) Then
+                Timer2.Start()
+                Timer1.Stop()
+                TmrLeft.Stop()
+
+            End If
+            If Angrypic.Bounds.IntersectsWith(Wallpic2.Bounds) Then
+                Timer1.Start()
+                Timer2.Stop()
+                tmrRight.Stop()
+            End If
         Next
 
     End Sub
@@ -135,7 +174,27 @@ Public Class Form1
     End Sub
 
     Private Sub up_Tick(sender As Object, e As EventArgs) Handles up.Tick
-        PictureBox3.Top += moveSpeed
-        PictureBox6.Top += moveSpeed
+        cloud.Top += moveSpeed
+        cloud1.Top += moveSpeed
+        cloud2.Top += moveSpeed
+        cloud3.Top += moveSpeed
+    End Sub
+
+    Private Sub ENDTMR_Tick(sender As Object, e As EventArgs) Handles ENDTMR.Tick
+        Me.Close()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Angrypic.Left -= 5
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Angrypic.Left += 5
     End Sub
 End Class
+
+
+
+
+
+' Hello This Is my first 200 lined code game 
