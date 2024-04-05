@@ -95,7 +95,7 @@ Public Class Form1
         End If
 
         If Picplayer.Bounds.IntersectsWith(PicCoin.Bounds) Then
-            CoinLabel.Text = ("1-1w")
+            CoinLabel.Text = ("1-1")
             PicCoin.Visible = False
             LeftAngryTmr.Enabled = True
             up.Enabled = True
@@ -191,6 +191,8 @@ Public Class Form1
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Angrypic.Left += 5
     End Sub
+
+
 End Class
 
 
